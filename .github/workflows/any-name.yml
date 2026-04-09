@@ -19,6 +19,12 @@ jobs:
 
         - name: Execute cowsay CMD
           run: cowsay -f dragon "run for cover smog is smoggin ....RAWR" >> dragon.txt
+
+        - name: Debug — show file contents
+          run: |
+              pwd
+              ls -ltr
+              cat dragon.txt
         
         - name: Check dragon file exists
           run: grep -i "dragon" dragon.txt
