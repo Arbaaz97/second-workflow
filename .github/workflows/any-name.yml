@@ -8,5 +8,21 @@ jobs:
         steps:
         - name:  Chekout Repo
           uses: actions/checkout@v4
-        - name: Welcome Message
-          run: echo "Hi there papi"
+
+        - name: Read and list files
+          run: |
+           echo "Hi there papi"
+           ls - ltr
+           cat README.md
+
+        - name: Install Cosway
+          run: sudo apt-get install cosway -y
+
+        - name: Execute cosway CMD
+          run: cosway -f dragon "run for cover smog is smoggin ....RAWR" >> dragon.txt
+        
+        - name: Check dragon file exists
+          run: grep -i "dragon" dragon.txt
+        
+        - name: checkout repo files
+          run: ls -ltr
