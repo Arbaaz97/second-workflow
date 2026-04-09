@@ -12,7 +12,6 @@ jobs:
         - name: Read and list files
           run: |
            echo "Hi there papi"
-           ls - ltr
            cat README.md
 
         - name: Install Cosway
