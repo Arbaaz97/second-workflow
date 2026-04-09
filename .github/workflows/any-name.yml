@@ -21,7 +21,7 @@ jobs:
           run: cowsay -f dragon "run for cover smog is smoggin ....RAWR" >> dragon.txt
         
         - name: Check dragon file exists
-          run: grep -i dragon.txt
+          run: grep -i "dragon" dragon.txt
         
         - name: checkout repo files
           run: ls -ltr
