@@ -14,11 +14,11 @@ jobs:
            echo "Hi there papi"
            cat README.md
 
-        - name: Install Cosway
-          run: sudo apt-get install cosway -y
+        - name: Install Cowsay
+          run: sudo apt-get install cowsay -y
 
-        - name: Execute cosway CMD
-          run: cosway -f dragon "run for cover smog is smoggin ....RAWR" >> dragon.txt
+        - name: Execute cowsay CMD
+          run: cowsay -f dragon "run for cover smog is smoggin ....RAWR" >> dragon.txt
         
         - name: Check dragon file exists
           run: grep -i "dragon" dragon.txt
