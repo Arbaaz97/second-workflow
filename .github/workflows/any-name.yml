@@ -3,31 +3,31 @@ name: Second Workflow
 on: push
 
 jobs:
-    first_job:
-        runs-on: ubuntu-latest
-        steps:
-        - name:  Chekout Repo
-          uses: actions/checkout@v4
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-        - name: Read and list files
-          run: |
-           echo "Hi there papi"
-           cat README.md
+      - name: Read and list files
+        run: |
+          echo "Hi there papi"
+          cat README.md
 
-        - name: Install Cowsay
-          run: sudo apt-get install cowsay -y
+      - name: Install Cowsay
+        run: sudo apt-get install cowsay -y
 
-        - name: Execute cowsay CMD
-          run: cowsay -f dragon "run for cover smog is smoggin ....RAWR" >> dragon.txt
+      - name: Execute Cowsay CMD
+        run: cowsay -f dragon "run for cover smog is smoggin ....RAWR" >> dragon.txt
 
-        - name: Debug — show file contents
-          run: |
-              pwd
-              ls -ltr
-              cat dragon.txt
-        
-        - name: Check dragon file exists
-          run: grep -i "dragon" dragon.txt
-        
-        - name: checkout repo files
-          run: ls -ltr
+      - name: Debug — show file contents
+        run: |
+          pwd
+          ls -ltr
+          cat dragon.txt
+
+      - name: Check file exists
+        run: grep -i "RAWR" dragon.txt
+
+      - name: List repo files
+        run: ls -ltr
