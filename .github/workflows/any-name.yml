@@ -1,0 +1,12 @@
+name: Second Workflow
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name:  Chekout Repo
+          run: actions/checkout@v6
+        - name: Welcome Message
+          run: echo "Hi there papi"
