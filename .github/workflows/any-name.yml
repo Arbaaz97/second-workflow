@@ -14,22 +14,9 @@ jobs:
           echo "Hi there papi"
           cat README.md
 
-      - name: Install Cowsay
-        run: |
-          sudo apt-get install cowsay -y
-          sudo apt-get install cowsay-off -y
+      - name: Executing Shell Script
+        run: ./ASCII-Script.sh
 
-      - name: Check available cows
-        run: ls /usr/share/cowsay/cows/
-
-      - name: Execute Cowsay CMD
-        run: cowsay -f dragon "run for cover smog is smoggin ....RAWR" >> dragon.txt
-
-      - name: Show dragon file
-        run: cat dragon.txt
-
-      - name: Check file exists
-        run: grep -i "RAWR" dragon.txt
-
+     
       - name: List repo files
         run: ls -ltr
