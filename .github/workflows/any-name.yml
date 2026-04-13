@@ -3,14 +3,14 @@ name: Second Workflow
 on: push
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Read and list files
         run: |
@@ -20,6 +20,5 @@ jobs:
       - name: Executing Shell Script
         run: ./ASCII-Script.sh
 
-     
       - name: List repo files
         run: ls -ltr
