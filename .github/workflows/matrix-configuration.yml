@@ -4,15 +4,21 @@ on: push
 
 jobs:
   deploy:
-    
-
     strategy:
       fail-fast: false
       max-parallel: 2
 
       matrix:
-        os: [ubuntu-latest, ubuntu-20.04, windows-latest]
+        os: [ubuntu-latest, ubuntu-20.04]
         image: [hello-world, alpine]
+
+        include:
+          - os: windows-latest
+            image: hello-world
+
+        exclude:
+          - os: ubuntu-latest
+            image: alpine
 
     runs-on: ${{ matrix.os }}
 
