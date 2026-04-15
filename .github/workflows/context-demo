@@ -2,23 +2,23 @@ name: context-demo
 
 on: push
 
-job:  
-  context-demo: 
-     runs-on: ubuntu-latest
+jobs:
+  context-demo:
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: github context info
-      run: |
-        echo "repo name : ${{github.repository}}"
-        echo "branch name: ${{github.ref_name}}"
+    steps:
+      - name: github context info
+        run: |
+          echo "repo name : ${{ github.repository }}"
+          echo "branch name: ${{ github.ref_name }}"
 
-    - name: runner context info
-      run: |
-        echo "runner os is {{runner.os}}"
-        echo "runner workspace is {{runner.workspace}}"
+      - name: runner context info
+        run: |
+          echo "runner os is ${{ runner.os }}"
+          echo "runner workspace is ${{ runner.workspace }}"
 
-    - name: job context info
-      run: echo "job status is {{job.status}}"
+      - name: job context info
+        run: echo "job status is ${{ job.status }}"
 
     
 
