@@ -4,6 +4,8 @@ on: push
 
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/main' && github.actor == 'arbaaz97'
+
     strategy:
       fail-fast: false
       max-parallel: 2
